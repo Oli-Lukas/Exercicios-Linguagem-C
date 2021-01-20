@@ -24,7 +24,7 @@ int main()
 		algarismo++;
 		temp -= 1;
 	}
-	printf("%d ", algarismo, temp);
+	printf("%d ", algarismo);
 	soma += algarismo;
 	algarismo = 0;
 
