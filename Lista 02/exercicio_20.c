@@ -17,7 +17,7 @@ bool verificaLados(float ladoPrincipal, float soma);
 bool eTrianguloEquilatero(float ladoA, float ladoB, float ladoC);
 bool eTrianguloIsocele(float ladoA, float ladoB, float ladoC);
 void lerLados(float *a, float *b, float *c);
-const char * devolveClassificacao(float a, float b, float c);
+char * devolveClassificacao(float a, float b, float c);
 
 int main()
 {
@@ -77,7 +77,7 @@ void lerLados(float *a, float *b, float *c)
 	while (*c <= 0);
 }
 
-const char * devolveClassificacao(float a, float b, float c)
+char * devolveClassificacao(float a, float b, float c)
 {
 	if (eTriangulo(a, b, c))
 	{
