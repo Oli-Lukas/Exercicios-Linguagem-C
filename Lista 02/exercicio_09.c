@@ -5,21 +5,33 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
+
+bool validaEmprestimo(float prestacao, float salario);
+void imprimeStatusDoEmprestimo(bool status);
 
 int main()
 {
-	float salario, vintePorCentoDoSalario, prestacaoDoEmprestimo;
+	float salario, prestacaoDoEmprestimo;
 	
-	printf("Digite o salario do trabalhador: "); scanf("%f", &salario);
-	printf("Digite o valor da prestacao do emprestimo: "); scanf("%f", &prestacaoDoEmprestimo);
+	printf("Digite o salario do trabalhador: R$ "); scanf("%f", &salario);
+	printf("Digite o valor da prestacao do emprestimo: R$ "); scanf("%f", &prestacaoDoEmprestimo);
 
-	vintePorCentoDoSalario = salario * 0.20;
-	
-	if (prestacaoDoEmprestimo > vintePorCentoDoSalario)
-		printf("Emprestimo nao concedido.\n");
-	else
-		printf("Emprestimo concedido.\n");
-
+	imprimeStatusDoEmprestimo(validaEmprestimo(prestacaoDoEmprestimo, salario));
 	
 	return EXIT_SUCCESS;
+}
+
+bool validaEmprestimo(float prestacao, float salario)
+{
+	float vintePorCentoDoSalario;
+
+	vintePorCentoDoSalario = salario * 0.20;
+
+	return (prestacao <= vintePorCentoDoSalario);
+}
+
+void imprimeStatusDoEmprestimo(bool status)
+{
+	(status) ? printf("Emprestimo concedido.\n") : printf("Emprestimo nao concedido.\n");
 }

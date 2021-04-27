@@ -8,34 +8,78 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 
 #define PESO_TRABALHO_DE_LABORATORIO 2.0
 #define PESO_AVALIACAO_SEMESTRAL 3.0
 #define PESO_EXAME_FINAL 5.0
+
+float lerNotaDoAluno(const char *tipoDeAvaliacao);
+bool eNotaValida(float nota);
+float calculaMediaPonderada(float trabalhoDeLaboratorio, float avaliacaoSemestral, float exameFinal);
+void exibeResultado(float media);
 
 int main()
 {
 	float notaTrabalhoDeLaboratorio, notaAvaliacaoSemestral, notaExameFinal;
 	float mediaPonderada;
 
-	printf("Informe a nota do aluno no Trabalho de Laboratorio (0 a 10): "); scanf("%f", &notaTrabalhoDeLaboratorio);
-	printf("Informe a nota do aluno na Avaliacao Semestral (0 a 10)    : "); scanf("%f", &notaAvaliacaoSemestral);
-	printf("Informe a nota do aluno no Exame Final (0 a 10)            : "); scanf("%f", &notaExameFinal);
+	notaTrabalhoDeLaboratorio = lerNotaDoAluno("Trabalho de Laboratorio");
+	notaAvaliacaoSemestral = lerNotaDoAluno("Avaliacao Semestral");
+	notaExameFinal = lerNotaDoAluno("Exame Final");
 
-	mediaPonderada = ((notaTrabalhoDeLaboratorio * PESO_TRABALHO_DE_LABORATORIO) + 
-					  (notaAvaliacaoSemestral * PESO_AVALIACAO_SEMESTRAL) + 
-					  (notaExameFinal * PESO_EXAME_FINAL)) / (PESO_TRABALHO_DE_LABORATORIO + PESO_AVALIACAO_SEMESTRAL + PESO_EXAME_FINAL);
+	mediaPonderada = calculaMediaPonderada(notaTrabalhoDeLaboratorio, notaAvaliacaoSemestral, notaExameFinal);
+
+	exibeResultado(mediaPonderada);
 	
-	if (mediaPonderada >= 0 && mediaPonderada <= 2.9)
+	return EXIT_SUCCESS;
+}
+
+float lerNotaDoAluno(const char *tipoDeAvaliacao)
+{
+	float nota;
+
+	do
+	{
+		printf("Informe a nota do aluno no(a) %s (0 a 10): ", tipoDeAvaliacao); scanf("%f", &nota);
+
+		if (!eNotaValida(nota))
+		{
+			printf("Nota digitada invalida!\n");
+			printf("Digite um numero entre 0 e 10.\n\n");
+		}
+	}
+	while (!eNotaValida(nota));
+
+	return nota;
+}
+
+bool eNotaValida(float nota)
+{
+	return (nota >= 0 && nota <= 10);
+}
+
+float calculaMediaPonderada(float trabalhoDeLaboratorio, float avaliacaoSemestral, float exameFinal)
+{
+	float media;
+
+	media = ((trabalhoDeLaboratorio * PESO_TRABALHO_DE_LABORATORIO) +
+			 (avaliacaoSemestral * PESO_AVALIACAO_SEMESTRAL) +
+			 (exameFinal * PESO_EXAME_FINAL)) / (PESO_TRABALHO_DE_LABORATORIO + PESO_AVALIACAO_SEMESTRAL + PESO_EXAME_FINAL);
+	
+	return media;
+}
+
+void exibeResultado(float media)
+{
+	if (media <= 2.9)
 		printf("O aluno foi reprovado.\n");
-	else if (mediaPonderada >= 3 && mediaPonderada <= 4.9)
+	else if (media >= 3 && media <= 4.9)
 		printf("O aluno esta de recuperacao.\n");
 	else
 		printf("O aluno foi aprovado.\n");
-	
-	printf("Nota Final = %.2f.\n", mediaPonderada);
-	
-	return EXIT_SUCCESS;
+
+	printf("Nota Final = %.2f.\n", media);
 }
 
 #undef PESO_TRABALHO_DE_LABORATORIO

@@ -7,36 +7,53 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
+int lerNumero(const char *ordem);
+bool eIgual(int num1, int num2);
+int retornaMaiorNumero(int num1, int num2);
+int retornaDiferenca(int num1, int num2);
+int comparaNumeros(int num1, int num2, int *pDiferenca);
+
 int main()
 {
 	bool empatou;
 	int numero1, numero2, diferenca, maior;
 	
-	printf("Digite o primeiro numero: "); scanf("%d", &numero1);
-	printf("Digite o segundo numero : "); scanf("%d", &numero2);
+	numero1 = lerNumero("primeiro");
+	numero2 = lerNumero("segundo");
 
-	if (numero1 > numero2)
+	if (!eIgual(numero1, numero2))
 	{
-		diferenca = numero1 - numero2;
-		maior = numero1;
-	}
-	else if (numero2 > numero1)
-	{
-		diferenca = numero2 - numero1;
-		maior = numero2;
+		maior = retornaMaiorNumero(numero1, numero2);
+		diferenca = retornaDiferenca(numero1, numero2);
+
+		printf("O maior numero digitado foi %d.\n", maior);		
 	}
 	else
-	{
-		diferenca = 0;
-		empatou = true;
-	}
-
-	if (!empatou)
-		printf("O maior numero digitado foi %d.\n", numero2);
-	else
-		printf("Você digitou o mesmo numero duas vezes.\n");
-	
-	printf("diferenca = %d.\n", diferenca);
+		printf("Voce digitou o mesmo numero duas vezes.\n");
 
 	return EXIT_SUCCESS;
+}
+
+int lerNumero(const char *ordem)
+{
+	int numero;
+
+	printf("Digite o %s numero: ", ordem); scanf("%d", &numero);
+
+	return numero;
+}
+
+bool eIgual(int num1, int num2)
+{
+	return (num1 == num2);
+}
+
+int retornaMaiorNumero(int num1, int num2)
+{
+	return (num1 > num2) ? num1 : num2;
+}
+
+int retornaDiferenca(int num1, int num2)
+{
+	return (retornaMaiorNumero(num1, num2) == num1) ? (num1 - num2) : (num2 - num1);
 }

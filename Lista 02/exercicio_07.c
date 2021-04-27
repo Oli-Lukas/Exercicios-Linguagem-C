@@ -7,25 +7,49 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
+float lerNumero(const char *ordem);
+bool eIgual(float num1, float num2);
+float retornaMaiorNumero(float num1, float num2);
+void exibeResultado(bool numerosIguais, float maior);
+
 int main()
 {
-	bool empatou = false;
 	float numero1, numero2, maior;
 	
-	printf("Digite o primeiro numero: "); scanf("%f", &numero1);
-	printf("Digite o segundo numero : "); scanf("%f", &numero2);
+	numero1 = lerNumero("primeiro");
+	numero2 = lerNumero("segundo");
 
-	if (numero1 > numero2)
-		maior = numero1;
-	else if (numero2 > numero1)
-		maior = numero2;
-	else
-		empatou = true;
-	
-	if (!empatou)
+	if (!eIgual(numero1, numero2))
+		maior = retornaMaiorNumero(numero1, numero2);
+
+	exibeResultado(eIgual(numero1, numero2), maior);
+
+	return EXIT_SUCCESS;
+}
+
+float lerNumero(const char *ordem)
+{
+	float numero;
+
+	printf("Digite o %s numero: ", ordem); scanf("%f", &numero);
+
+	return numero;
+}
+
+bool eIgual(float num1, float num2)
+{
+	return (num1 == num2);
+}
+
+float retornaMaiorNumero(float num1, float num2)
+{
+	return (num1 > num2) ? num1 : num2;
+}
+
+void exibeResultado(bool numerosIguais, float maior)
+{
+	if (!numerosIguais)
 		printf("O maior numero digitado foi %f.\n", maior);
 	else
 		printf("Numeros iguais.\n");
-
-	return EXIT_SUCCESS;
 }

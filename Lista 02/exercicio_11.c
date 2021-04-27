@@ -9,43 +9,84 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+int lerNumero();
+int retornaQtdAlgarismos(int numero);
+int retornaAlgarismo(int posicao, int numero);
+int imprimeAlgarismosERetornaSoma(int numero, int qtdAlgarismos);
+void exibeSoma(int soma);
+
 int main()
 {
-	int numero, multiplo, algarismo = 0, temp, soma = 0;
+	int numero, qtdAlgarismos, algarismo, soma;
 
-	printf("Digite um numero inteiro: "); scanf("%d", &numero);
+	numero = lerNumero();	
+	soma = imprimeAlgarismosERetornaSoma(numero, retornaQtdAlgarismos(numero));
+	exibeSoma(soma);
 
-	temp = numero;
-	multiplo = 10;
-
-	// algarismo das unidades.
-	while (temp % multiplo != 0)
-	{
-		algarismo++;
-		temp -= 1;
-	}
-	printf("%d ", algarismo);
-	soma += algarismo;
-	algarismo = 0;
-
-	// algarismos restantes.
-	while (temp > 0)
-	{
-		if ((temp - (algarismo * multiplo)) % (multiplo * 10) == 0)
-		{
-			printf("%d ", algarismo);
-			soma += algarismo;
-			temp -= (algarismo * multiplo);
-
-			algarismo = 0;
-			multiplo *= 10;
-		}
-		else
-			algarismo++;
-	}
-
-	putchar('\n');
-	printf("soma = %d.\n", soma);
-	
 	return EXIT_SUCCESS;
+}
+
+int lerNumero()
+{
+	int numero;
+
+	do
+	{
+		printf("Digite um numero inteiro maior do que zero: "); scanf("%d", &numero);
+	}
+	while (numero <= 0);
+
+	return numero;
+}
+
+int retornaQtdAlgarismos(int numero)
+{
+	int limite = 10, qtdAlgarismos = 1;
+
+	while (!(numero < limite))
+	{
+		limite *= 10;
+		qtdAlgarismos++;
+	}
+
+	return qtdAlgarismos;
+}
+
+int retornaAlgarismo(int posicao, int numero)
+{
+	int algarismo, modulo = 10;
+
+	for (int count = 1; count <= posicao; count++)
+	{
+		algarismo = numero % modulo;
+		numero -= algarismo;
+
+		algarismo /= (modulo / 10);
+		modulo *= 10;
+	}
+
+	return algarismo;
+}
+
+int imprimeAlgarismosERetornaSoma(int numero, int qtdAlgarismos)
+{
+	int algarismo, soma;
+
+	soma = 0;
+
+	for (int count = qtdAlgarismos; count >= 1; count--)
+	{
+		algarismo = retornaAlgarismo(count, numero);
+
+		printf("%d ", algarismo);
+		soma += algarismo;
+	}
+
+	return soma;
+}
+
+void exibeSoma(int soma)
+{
+	printf("\n");
+	printf("Soma = %d.\n", soma);
 }

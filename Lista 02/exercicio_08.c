@@ -6,27 +6,62 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
+
+#define NOTA_MINIMA 0.0
+#define NOTA_MAXIMA 10.0
+
+float lerNotaAluno(const char *ordem);
+bool validaNota(float nota);
+float calculaMedia(float n1, float n2);
+void exibeMedia(float media);
 
 int main()
 {
 	float nota1, nota2, media;
 
-	printf("Digite a primeira nota: "); scanf("%f", &nota1);
-	if (nota1 < 0 || nota1 > 10)
-	{
-		printf("A nota digitada e invalida.\n");
-		return EXIT_FAILURE;
-	}
+	nota1 = lerNotaAluno("primeira");
+	nota2 = lerNotaAluno("segunda");
 
-	printf("Digite a segunda nota : "); scanf("%f", &nota2);
-	if (nota2 < 0 || nota2 > 10)
-	{
-		printf("A nota digitada e invalida.\n");
-		return EXIT_FAILURE;
-	}
-
-	media = (nota1 + nota2) / 2.0;
-	printf("A media das notas digitadas e %.2f.\n", media);
+	media = calculaMedia(nota1, nota2);
+	exibeMedia(media);
 
 	return EXIT_SUCCESS;
 }
+
+float lerNotaAluno(const char *ordem)
+{
+	float nota;
+
+	printf("Digite a %s nota: ", ordem); scanf("%f", &nota);
+	if (!validaNota(nota))
+	{
+		printf("A nota digitada e invalida.\n");
+		printf("Digite uma nota entre %.2f e %.2f.\n", NOTA_MINIMA, NOTA_MAXIMA);
+		exit(EXIT_FAILURE);
+	}
+
+	return nota;
+}
+
+bool validaNota(float nota)
+{
+	return (nota >= NOTA_MINIMA && nota <= NOTA_MAXIMA);
+}
+
+float calculaMedia(float n1, float n2)
+{
+	float media;
+
+	media = (n1 + n2) / 2.0;
+
+	return media;
+}
+
+void exibeMedia(float media)
+{
+	printf("A media das notas digitadas eh %.2f.\n", media);
+}
+
+#undef NOTA_MINIMA
+#undef NOTA_MAXIMA
