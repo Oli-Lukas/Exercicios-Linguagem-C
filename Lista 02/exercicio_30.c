@@ -8,14 +8,14 @@
 
 #define TAMANHO_ARRAY 3
 
-int lerNumero();
-void ordenaNumeros(int *num1, int *num2, int *num3);
-void selectionSort(int *array);
-void permutaValores(int *num1, int *num2);
+float lerNumero();
+void ordenaNumeros(float *num1, float *num2, float *num3);
+void selectionSort(float *array);
+void permutaValores(float *num1, float *num2);
 
 int main()
 {
-	int num1, num2, num3;
+	float num1, num2, num3;
 
 	num1 = lerNumero();
 	num2 = lerNumero();
@@ -23,25 +23,25 @@ int main()
 
 	ordenaNumeros(&num1, &num2, &num3);
 
-	printf("%d\n", num1);
-	printf("%d\n", num2);
-	printf("%d\n", num3);
+	printf("%.4f\n", num1);
+	printf("%.4f\n", num2);
+	printf("%.4f\n", num3);
 
 	return EXIT_SUCCESS;
 }
 
-int lerNumero()
+float lerNumero()
 {
-	int numero;
+	float numero;
 
-	printf("Digite um numero: "); scanf("%d", &numero);
+	printf("Digite um numero: "); scanf("%f", &numero);
 
 	return numero;
 }
 
-void ordenaNumeros(int *num1, int *num2, int *num3)
+void ordenaNumeros(float *num1, float *num2, float *num3)
 {
-	int array[TAMANHO_ARRAY] = {*num3, *num2, *num1};
+	float array[TAMANHO_ARRAY] = {*num3, *num2, *num1};
 
 	selectionSort(array);
 
@@ -50,9 +50,9 @@ void ordenaNumeros(int *num1, int *num2, int *num3)
 	*num1 = array[0];
 }
 
-void selectionSort(int *array)
+void selectionSort(float *array)
 {
-	int indiceDoMenor, temporario;
+	int indiceDoMenor;
 
 	for (int i = 0; i < (TAMANHO_ARRAY - 1); i++)
 	{
@@ -66,9 +66,9 @@ void selectionSort(int *array)
 	}
 }
 
-void permutaValores(int *num1, int *num2)
+void permutaValores(float *num1, float *num2)
 {
-	int temp;
+	float temp;
 
 	temp = *num1;
 	*num1 = *num2;
