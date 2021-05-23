@@ -8,6 +8,8 @@
 #include <stdbool.h>
 
 void contadorForLoop(int inicio, int fim, int incremento);
+void contadorWhileLoop(int inicio, int fim, int incremento);
+void contadorDoWhileLoop(int inicio, int fim, int incremento);
 bool validaArgumentos(int inicio, int fim, int incremento);
 
 int main()
