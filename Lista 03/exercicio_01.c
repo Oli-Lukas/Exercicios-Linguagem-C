@@ -11,26 +11,33 @@
 #define MULTIPLO_ALVO 3
 #define VALOR_INICIAL_CONTAGEM 1
 
+void exibeMultiplos(int multiploAlvo, int aPartirDe, int quantidade);
 bool eMultiplo(int numero, int supostoDivisor);
 
 int main()
 {
-	int contador, qtdDeMultiplosDe3;
+	exibeMultiplos(MULTIPLO_ALVO, VALOR_INICIAL_CONTAGEM, QTD_DE_NUMEROS_PARA_EXIBIR);
 
-	contador = VALOR_INICIAL_CONTAGEM;
-	qtdDeMultiplosDe3 = 0;
+	return EXIT_SUCCESS;
+}
 
-	while (qtdDeMultiplosDe3 < QTD_DE_NUMEROS_PARA_EXIBIR)
+void exibeMultiplos(int multiploAlvo, int aPartirDe, int quantidade)
+{
+	int contador, multiplosEncontrados;
+
+	contador = aPartirDe;
+	multiplosEncontrados = 0;
+
+	while (multiplosEncontrados < quantidade)
 	{
-		if (eMultiplo(contador, MULTIPLO_ALVO))
+		if (eMultiplo(contador, multiploAlvo))
 		{
-			printf("Multiplo de %d: %d\n", MULTIPLO_ALVO,contador);	
-			qtdDeMultiplosDe3++;
+			multiplosEncontrados++;
+			printf("Multiplo de %d: %d\n", multiploAlvo, contador);
 		}
+
 		contador++;
 	}
-	
-	return EXIT_SUCCESS;
 }
 
 bool eMultiplo(int numero, int supostoDivisor)
