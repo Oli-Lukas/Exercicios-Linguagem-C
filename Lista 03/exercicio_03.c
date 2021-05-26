@@ -7,12 +7,16 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
+#define CONTAGEM_INICIO 10
+#define CONTAGEM_FIM 0
+#define INCREMENTO -1
+
 void contadorWhileLoop(int inicio, int fim, int incremento);
 bool validaArgumentos(int inicio, int fim, int incremento);
 
 int main()
 {
-	contadorWhileLoop(10, 0, -1);
+	contadorWhileLoop(CONTAGEM_INICIO, CONTAGEM_FIM, INCREMENTO);
 	printf("FIM!\n");
 	
 	return EXIT_SUCCESS;
@@ -69,3 +73,7 @@ bool validaArgumentos(int inicio, int fim, int incremento)
 	
 	return intervaloPossivel;
 }
+
+#undef CONTAGEM_INICIO
+#undef CONTAGEM_FIM
+#undef INCREMENTO
