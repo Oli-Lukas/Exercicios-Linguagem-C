@@ -7,12 +7,16 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
+#define CONTAGEM_INICIAL 0
+#define CONTAGEM_FIM 100000
+#define INCREMENTO 1000
+
 void contadorForLoop(int inicio, int fim, int incremento);
 bool validaArgumentos(int inicio, int fim, int incremento);
 
 int main()
 {
-	contadorForLoop(0, 100000, 1000);
+	contadorForLoop(CONTAGEM_INICIAL, CONTAGEM_FIM, INCREMENTO);
 	
 	return EXIT_SUCCESS;
 }
@@ -60,3 +64,7 @@ bool validaArgumentos(int inicio, int fim, int incremento)
 	
 	return intervaloPossivel;
 }
+
+#undef CONTAGEM_INICIAL
+#undef CONTAGEM_FIM
+#undef INCREMENTO
