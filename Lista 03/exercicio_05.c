@@ -7,7 +7,7 @@
 
 #define QTD_NUMEROS 10
 
-int lerQuantidadeDeNumeros(int quantidade);
+float lerQuantidadeDeNumeros(int quantidade);
 float lerNumero(int ordem);
 void exibeSoma(float soma);
 
@@ -21,7 +21,7 @@ int main()
 	return EXIT_SUCCESS;
 }
 
-int lerQuantidadeDeNumeros(int quantidade)
+float lerQuantidadeDeNumeros(int quantidade)
 {
 	int contador;
 	float soma, numero;
