@@ -9,7 +9,7 @@
 
 #define FINAL_CONTAGEM 0
 
-int lerNumero();
+unsigned int lerNumero();
 bool validaNumero(unsigned int numero);
 void contadorParesDecrescente(unsigned int inicio, unsigned int fim);
 bool validaContador(unsigned int inicio, unsigned int fim);
@@ -25,14 +25,14 @@ int main()
 }
 
 // Função 'lerNumero' copiada de 'exercicio_13.c'.
-int lerNumero()
+unsigned int lerNumero()
 {
 	unsigned int numero;
 	bool numeroValido;
 
 	do
 	{
-		printf("Digite um numero inteiro positivo: "); scanf("%u", &numero);
+		printf("Digite um numero inteiro positivo par: "); scanf("%u", &numero);
 
 		numeroValido = validaNumero(numero);
 		if (!numeroValido)
@@ -55,9 +55,9 @@ void contadorParesDecrescente(unsigned int inicio, unsigned int fim)
 		unsigned int contador;
 
 		for (contador = inicio; contador > fim; contador-=2)
-			printf("%d\n", contador);
+			printf("%u\n", contador);
 		
-		printf("%d\n", fim);
+		printf("%u\n", fim);
 	}
 	else
 		printf("\nValores informados invalidos! Nao eh possivel realizar a contagem!\n");

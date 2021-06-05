@@ -9,7 +9,7 @@
 
 #define INICIO_CONTAGEM 0
 
-int lerNumero();
+unsigned int lerNumero();
 bool validaNumero(unsigned int numero);
 void contadorParesCrescente(unsigned int inicio, unsigned int fim);
 bool validaContador(unsigned int inicio, unsigned int fim);
@@ -24,14 +24,14 @@ int main()
 	return EXIT_SUCCESS;
 }
 
-int lerNumero()
+unsigned int lerNumero()
 {
 	unsigned int numero;
 	bool numeroValido;
 
 	do
 	{
-		printf("Digite um numero inteiro positivo: "); scanf("%u", &numero);
+		printf("Digite um numero inteiro positivo par: "); scanf("%u", &numero);
 
 		numeroValido = validaNumero(numero);
 		if (!numeroValido)

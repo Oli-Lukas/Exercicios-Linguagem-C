@@ -9,9 +9,9 @@
 
 #define INICIO_CONTAGEM 0
 
-int lerNumero();
+unsigned int lerNumero();
 void contadorCrescente(unsigned int inicio, unsigned int fim);
-bool validaContador(int inicio, int fim);
+bool validaContador(unsigned int inicio, unsigned int fim);
 
 int main()
 {
@@ -23,7 +23,7 @@ int main()
 	return EXIT_SUCCESS;
 }
 
-int lerNumero()
+unsigned int lerNumero()
 {
 	unsigned int numero;
 

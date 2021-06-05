@@ -9,9 +9,9 @@
 
 #define FINAL_CONTAGEM 0
 
-int lerNumero();
+unsigned int lerNumero();
 void contadorDecrescente(unsigned int inicio, unsigned int fim);
-bool validaContador(int inicio, int fim);
+bool validaContador(unsigned int inicio, unsigned int fim);
 
 int main()
 {
@@ -24,7 +24,7 @@ int main()
 }
 
 // Função 'lerNumero' copiada de 'exercicio_11.c'.
-int lerNumero()
+unsigned int lerNumero()
 {
 	unsigned int numero;
 
