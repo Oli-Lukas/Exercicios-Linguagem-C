@@ -8,11 +8,11 @@
 
 int main()
 {
-    float litros, metrosCubicos;
+    float litros, metros_cubicos;
 
     printf("Entre com um valor de volume em litros: "); scanf("%f", &litros);
-    metrosCubicos = (litros / 1000);
-    printf("%.4f litro(s) equivale a %.4f metro(s) cubico(s).\n", litros, metrosCubicos);
+    metros_cubicos = (litros / 1000);
+    printf("%.4f litro(s) equivale a %.4f metro(s) cubico(s).\n", litros, metros_cubicos);
     
     return EXIT_SUCCESS;
 }

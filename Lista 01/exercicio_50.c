@@ -8,14 +8,14 @@
 
 int main()
 {
-    int anoAtual, idade, anoDeNascimento;
+    int ano_atual, idade, ano_nascimento;
 
     printf("Digite a sua idade: "); scanf("%d", &idade);
-    printf("Digite o ano atual: "); scanf("%d", &anoAtual);
+    printf("Digite o ano atual: "); scanf("%d", &ano_atual);
 
-    anoDeNascimento = anoAtual - idade;
+    ano_nascimento = ano_atual - idade;
 
-    printf("Voce nasceu no ano de %d.\n", anoDeNascimento);
+    printf("Voce nasceu no ano de %d.\n", ano_nascimento);
     
     return EXIT_SUCCESS;
 }

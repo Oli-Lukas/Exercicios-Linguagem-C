@@ -11,12 +11,13 @@
 
 int main()
 {
-    float salarioBase, salarioFinal;
+    float salario_base, salario_final;
 
-    printf("Digite o salario-base do funcionario: "); scanf("%f", &salarioBase);
-    salarioFinal = salarioBase * (1 + TAXA_DE_GRATIFICACAO);
-    printf("Salario-base = R$ %.2f.\n", salarioBase);
-    printf("Salario com gratificacao = R$ %.2f.\n", salarioFinal);
+    printf("Digite o salario-base do funcionario: "); scanf("%f", &salario_base);
+    salario_final = salario_base * (1 + TAXA_DE_GRATIFICACAO);
+    
+    printf("Salario-base = R$ %.2f.\n", salario_base);
+    printf("Salario com gratificacao = R$ %.2f.\n", salario_final);
     
     return EXIT_SUCCESS;
 }

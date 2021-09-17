@@ -8,16 +8,16 @@
 
 int main()
 {
-    int numeroDeHorasTrabalhadas;
-    float valorDaHora, valorFinal;
+    int numero_horas_trabalhadas;
+    float valor_hora, valor_final;
 
-    printf("Digite o valor da hora de trabalho: "); scanf("%f", &valorDaHora);
-    printf("Quantas horas foram trabalhadas no mes: "); scanf("%d", &numeroDeHorasTrabalhadas);
+    printf("Digite o valor da hora de trabalho: "); scanf("%f", &valor_hora);
+    printf("Quantas horas foram trabalhadas no mes: "); scanf("%d", &numero_horas_trabalhadas);
 
-    valorFinal = valorDaHora * numeroDeHorasTrabalhadas;
-    valorFinal *= 1.10;
+    valor_final = valor_hora * numero_horas_trabalhadas;
+    valor_final *= 1.10;
 
-    printf("Valor Final: R$ %.2f.\n", valorFinal);
+    printf("Valor Final: R$ %.2f.\n", valor_final);
     
     return EXIT_SUCCESS;
 }

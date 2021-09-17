@@ -12,19 +12,19 @@
 
 int main()
 {
-    int numeroDeDias = 0;
-    float valorLiquido, valorBruto, impostoDeRenda;
+    int numero_dias = 0;
+    float valor_liquido, valor_bruto, imposto_renda;
 
-    printf("Quantos dias o encanador trabalhou? "); scanf("%d", &numeroDeDias);
+    printf("Quantos dias o encanador trabalhou? "); scanf("%d", &numero_dias);
     printf("\n");
 
-    valorBruto = numeroDeDias * DIARIA;
-    impostoDeRenda = valorBruto * TAXA_DO_IMPOSTO_DE_RENDA;
-    valorLiquido = valorBruto - impostoDeRenda;
+    valor_bruto   = numero_dias * DIARIA;
+    imposto_renda = valor_bruto * TAXA_DO_IMPOSTO_DE_RENDA;
+    valor_liquido = valor_bruto - imposto_renda;
 
-    printf("Valor Bruto      = R$ %.2f.\n", valorBruto);
-    printf("Imposto de Renda = R$ %.2f.\n", impostoDeRenda);
-    printf("Valor Liquido    = R$ %.2f.\n", valorLiquido);
+    printf("Valor Bruto      = R$ %.2f.\n", valor_bruto);
+    printf("Imposto de Renda = R$ %.2f.\n", imposto_renda);
+    printf("Valor Liquido    = R$ %.2f.\n", valor_liquido);
 
     return EXIT_SUCCESS;
 }

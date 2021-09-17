@@ -10,39 +10,39 @@
 
 int main()
 {
-    int horaInicial, minutoInicial, segundoInicial;
-    int segundos, qtdHoras, qtdMinutos, qtdSegundos;
-    int horaFinal, minutoFinal, segundoFinal;
+    int hora_inicial, minuto_inicial, segundo_inicial;
+    int segundos, quantidade_horas, quantidade_minutos, quantidade_segundos;
+    int hora_final, minuto_final, segundo_final;
 
-    printf("Digite a hora em que o experimento iniciara: "); scanf("%d", &horaInicial);
-    printf("Digite o minuto em que o experimento iniciara: "); scanf("%d", &minutoInicial);
-    printf("Digite o segundo em que o experimento iniciara: "); scanf("%d", &segundoInicial);
+    printf("Digite a hora em que o experimento iniciara: "); scanf("%d", &hora_inicial);
+    printf("Digite o minuto em que o experimento iniciara: "); scanf("%d", &minuto_inicial);
+    printf("Digite o segundo em que o experimento iniciara: "); scanf("%d", &segundo_inicial);
     printf("Digite quantos segundos o experimento deve durar: "); scanf("%d", &segundos);
 
-    qtdHoras = segundos / 3600;
-    segundos -= qtdHoras * 3600;
-    qtdMinutos = segundos / 60;
-    segundos -= qtdMinutos * 60;
-    qtdSegundos = segundos;
+    quantidade_horas = segundos / 3600;
+    segundos -= quantidade_horas * 3600;
+    quantidade_minutos = segundos / 60;
+    segundos -= quantidade_minutos * 60;
+    quantidade_segundos = segundos;
 
-    horaFinal = horaInicial + qtdHoras;
-    minutoFinal = minutoInicial + qtdMinutos;
-    segundoFinal = segundoInicial + qtdSegundos;
-    if (segundoFinal >= 60)
+    hora_final = hora_inicial + quantidade_horas;
+    minuto_final = minuto_inicial + quantidade_minutos;
+    segundo_final = segundo_inicial + quantidade_segundos;
+    if (segundo_final >= 60)
     {
-        segundoFinal -= 60;
-        minutoFinal++;
+        segundo_final -= 60;
+        minuto_final++;
     }
-    if (minutoFinal >= 60)
+    if (minuto_final >= 60)
     {
-        minutoFinal -= 60;
-        horaFinal++;
+        minuto_final -= 60;
+        hora_final++;
     }
-    if (horaFinal >= 24)
-        horaFinal -= 24;
+    if (hora_final >= 24)
+        hora_final -= 24;
 
-    printf("Horario inicial: %02d:%02d:%02d\n", horaInicial, minutoInicial, segundoInicial);
-    printf("Horario Final: %02d:%02d:%02d\n", horaFinal, minutoFinal, segundoFinal);
+    printf("Horario inicial: %02d:%02d:%02d\n", hora_inicial, minuto_inicial, segundo_inicial);
+    printf("Horario Final: %02d:%02d:%02d\n", hora_final, minuto_final, segundo_final);
     
     return EXIT_SUCCESS;
 }

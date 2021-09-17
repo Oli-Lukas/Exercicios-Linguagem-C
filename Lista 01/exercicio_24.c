@@ -8,11 +8,11 @@
 
 int main()
 {
-    float acres, metrosQuadrados;
+    float acres, metros_quadrados;
 
-    printf("Entre com o valor de area em metros quadrados: "); scanf("%f", &metrosQuadrados);
-    acres = metrosQuadrados * 0.000247;
-    printf("%.2f metro(s) quadrado(s) equivale a %.2f acre(s).\n", metrosQuadrados, acres);
+    printf("Entre com o valor de area em metros quadrados: "); scanf("%f", &metros_quadrados);
+    acres = metros_quadrados * 0.000247;
+    printf("%.2f metro(s) quadrado(s) equivale a %.2f acre(s).\n", metros_quadrados, acres);
     
     return EXIT_SUCCESS;
 }

@@ -8,11 +8,11 @@
 
 int main()
 {
-    float metrosQuadrados, hectares;
+    float metros_quadrados, hectares;
 
     printf("Entre com um valor de area em hectares: "); scanf("%f", &hectares);
-    metrosQuadrados = hectares * 10000;
-    printf("%.4f hectare(s) equivale a %.4f metro(s) quadrado(s).\n", hectares, metrosQuadrados);
+    metros_quadrados = hectares * 10000;
+    printf("%.4f hectare(s) equivale a %.4f metro(s) quadrado(s).\n", hectares, metros_quadrados);
     
     return EXIT_SUCCESS;
 }

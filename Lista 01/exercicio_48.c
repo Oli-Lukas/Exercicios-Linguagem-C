@@ -8,19 +8,19 @@
 
 int main()
 {
-    int tmp, qtdSegundos, horas, minutos, segundos;
+    int temp, quantidade_segundos, horas, minutos, segundos;
 
-    printf("Digite uma quantidade de segundos: "); scanf("%d", &qtdSegundos);
+    printf("Digite uma quantidade de segundos: "); scanf("%d", &quantidade_segundos);
 
-    tmp = qtdSegundos;
+    temp = quantidade_segundos;
 
-    horas = tmp / 3600;
-    tmp -= horas * 3600;
-    minutos = tmp / 60;
-    tmp -= minutos * 60;
-    segundos = tmp;
+    horas = temp / 3600;
+    temp -= horas * 3600;
+    minutos = temp / 60;
+    temp -= minutos * 60;
+    segundos = temp;
 
-    printf("%d segundos equivale a %d horas, %d minutos e %d segundos.", qtdSegundos, horas, minutos, segundos);
+    printf("%d segundos equivale a %d horas, %d minutos e %d segundos.", quantidade_segundos, horas, minutos, segundos);
     
     return EXIT_SUCCESS;
 }

@@ -8,11 +8,11 @@
 
 int main()
 {
-    float salario, novoSalario;
+    float salario, novo_salario;
 
     printf("Informe o salario do funcionario: "); scanf("%f", &salario);
-    novoSalario = (salario * 1.25);
-    printf("Salario com aumento: R$ %.2f.\n", novoSalario);
+    novo_salario = (salario * 1.25);
+    printf("Salario com aumento: R$ %.2f.\n", novo_salario);
     
     return EXIT_SUCCESS;
 }

@@ -8,16 +8,16 @@
 
 int main()
 {
-    float alturaDegrau, alturaTotal;
-    int qtdDegraus = 0;
+    float altura_degrau, altura_total;
+    int quantidade_degraus = 0;
 
-    printf("Digite a altura de cada degrau: "); scanf("%f", &alturaDegrau);
-    printf("Digite a altura total que deseja subir: "); scanf("%f", &alturaTotal);
+    printf("Digite a altura de cada degrau: "); scanf("%f", &altura_degrau);
+    printf("Digite a altura total que deseja subir: "); scanf("%f", &altura_total);
 
-    qtdDegraus = alturaTotal / alturaDegrau;
-    qtdDegraus++;
+    quantidade_degraus = altura_total / altura_degrau;
+    quantidade_degraus++;
 
-    printf("Voce precisa subir %d degraus para atingir - ou ultrapassar - essa altura.\n", qtdDegraus);
+    printf("Voce precisa subir %d degraus para atingir - ou ultrapassar - essa altura.\n", quantidade_degraus);
     
     return EXIT_SUCCESS;
 }

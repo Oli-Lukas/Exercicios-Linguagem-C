@@ -8,11 +8,11 @@
 
 int main()
 {
-    float valor, valorFinal;
+    float valor, valor_final;
 
     printf("Informe o valor do produto: "); scanf("%f", &valor);
-    valorFinal = (valor * 0.88);
-    printf("Valor com desconto: R$ %.2f.\n", valorFinal);
+    valor_final = (valor * 0.88);
+    printf("Valor com desconto: R$ %.2f.\n", valor_final);
     
     return EXIT_SUCCESS;
 }

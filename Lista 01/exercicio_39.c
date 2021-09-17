@@ -15,15 +15,15 @@
 int main()
 {
     float premio = 780000;
-    float primeiroGanhador, segundoGanhador, terceiroGanhador;
+    float primeiro_ganhador, segundo_ganhador, terceiro_ganhador;
 
-    primeiroGanhador = premio * (46.0 / 100.0);
-    segundoGanhador = premio * (32.0 / 100.0);
-    terceiroGanhador = premio - primeiroGanhador - segundoGanhador;
+    primeiro_ganhador = premio * (46.0 / 100.0);
+    segundo_ganhador  = premio * (32.0 / 100.0);
+    terceiro_ganhador = premio - primeiro_ganhador - segundo_ganhador;
 
-    printf("Primeiro Ganhador = R$ %.2f.\n", primeiroGanhador);
-    printf("Segundo Ganhador = R$ %.2f.\n", segundoGanhador);
-    printf("Terceiro Ganhador = R$ %.2f.\n", terceiroGanhador);
+    printf("Primeiro Ganhador = R$ %.2f.\n", primeiro_ganhador);
+    printf("Segundo Ganhador  = R$ %.2f.\n", segundo_ganhador);
+    printf("Terceiro Ganhador = R$ %.2f.\n", terceiro_ganhador);
     
     return EXIT_SUCCESS;
 }

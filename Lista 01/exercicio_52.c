@@ -11,31 +11,31 @@
 
 int main()
 {
-    float valorInvestido1, valorInvestido2, valorInvestido3, premio, total;
-    float taxa1, taxa2, taxa3, parte1, parte2, parte3;
+    float valor_investido_a, valor_investido_b, valor_investido_c, premio, total;
+    float taxa_a, taxa_b, taxa_c, parte_a, parte_b, parte_c;
 
-    printf("Quanto foi investido pelo ganhador A? R$ "); scanf("%f", &valorInvestido1);
-    printf("Quanto foi investido pelo ganhador B? R$ "); scanf("%f", &valorInvestido2);
-    printf("Quanto foi investido pelo ganhador C? R$ "); scanf("%f", &valorInvestido3);
+    printf("Quanto foi investido pelo ganhador A? R$ "); scanf("%f", &valor_investido_a);
+    printf("Quanto foi investido pelo ganhador B? R$ "); scanf("%f", &valor_investido_b);
+    printf("Quanto foi investido pelo ganhador C? R$ "); scanf("%f", &valor_investido_c);
     printf("Quanto foi o premio? R$ "); scanf("%f", &premio);
 
-    total = valorInvestido1 + valorInvestido2 + valorInvestido3;
+    total = valor_investido_a + valor_investido_b + valor_investido_c;
 
-    taxa1 = valorInvestido1 / total;
-    taxa2 = valorInvestido2 / total;
-    taxa3 = valorInvestido3 / total;
+    taxa_a = valor_investido_a / total;
+    taxa_b = valor_investido_b / total;
+    taxa_c = valor_investido_c / total;
 
-    printf("Taxa 1 = %.2f%%.\n", taxa1 * 100);
-    printf("Taxa 2 = %.2f%%.\n", taxa2 * 100);
-    printf("Taxa 3 = %.2f%%.\n", taxa3 * 100);
+    printf("Taxa 1 = %.2f%%.\n", taxa_a * 100);
+    printf("Taxa 2 = %.2f%%.\n", taxa_b * 100);
+    printf("Taxa 3 = %.2f%%.\n", taxa_c * 100);
 
-    parte1 = premio * taxa1;
-    parte2 = premio * taxa2;
-    parte3 = premio * taxa3;
+    parte_a = premio * taxa_a;
+    parte_b = premio * taxa_b;
+    parte_c = premio * taxa_c;
 
-    printf("Parte do ganhador A = R$ %.2f.\n", parte1);
-    printf("Parte do ganhador A = R$ %.2f.\n", parte2);
-    printf("Parte do ganhador A = R$ %.2f.\n", parte3);
+    printf("Parte do ganhador A = R$ %.2f.\n", parte_a);
+    printf("Parte do ganhador A = R$ %.2f.\n", parte_b);
+    printf("Parte do ganhador A = R$ %.2f.\n", parte_c);
     
     return EXIT_SUCCESS;
 }

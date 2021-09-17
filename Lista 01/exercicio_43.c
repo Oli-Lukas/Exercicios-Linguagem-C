@@ -12,21 +12,21 @@
 
 int main()
 {
-    float valorTotal, totalAPagar, parcela;
-    float comissaoAVista, comissaoParcelada;
+    float valor_total, total_pagar, parcela;
+    float comissao_vista, comissao_parcelada;
 
-    printf("Digite o valor total: "); scanf("%f", &valorTotal);
+    printf("Digite o valor total: "); scanf("%f", &valor_total);
     
-    totalAPagar = valorTotal * 0.90;
-    parcela = valorTotal / 3.0;
-    comissaoAVista = totalAPagar * (5.0 / 100.0);
-    comissaoParcelada = valorTotal * (5.0 / 100.0);
+    total_pagar        = valor_total * 0.90;
+    parcela            = valor_total / 3.0;
+    comissao_vista     = total_pagar * (5.0 / 100.0);
+    comissao_parcelada = valor_total * (5.0 / 100.0);
 
-    printf("Valor Total = R$ %.2f.\n", valorTotal);
-    printf("Total a Pagar = R$ %.2f.\n", totalAPagar);
+    printf("Valor Total = R$ %.2f.\n", valor_total);
+    printf("Total a Pagar = R$ %.2f.\n", total_pagar);
     printf("Parcela (3x sem juros) = R$ %.2f.\n", parcela);
-    printf("Comissao do vendedor, caso a venda seja a vista = R$ %.2f.\n", comissaoAVista);
-    printf("Comissao do vendedor, caso a venda seja parcelada = R$ %.2f.\n", comissaoParcelada);
+    printf("Comissao do vendedor, caso a venda seja a vista = R$ %.2f.\n", comissao_vista);
+    printf("Comissao do vendedor, caso a venda seja parcelada = R$ %.2f.\n", comissao_parcelada);
 
     return EXIT_SUCCESS;
 }
