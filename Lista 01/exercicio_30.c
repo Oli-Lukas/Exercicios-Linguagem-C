@@ -6,15 +6,17 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define PRECO_DO_DOLAR 5.10
+#define PRECO_DOLAR 5.10
 
 int main()
 {
     float reais, dolares;
     
     printf("Entre com o valor em reais(R$): "); scanf("%f", &reais);
-    dolares = reais / PRECO_DO_DOLAR;
+    dolares = reais / PRECO_DOLAR;
     printf("R$ %.2f = U$D %.2f.\n", reais, dolares);
 
     return EXIT_SUCCESS;
 }
+
+#undef PRECO_DOLAR
