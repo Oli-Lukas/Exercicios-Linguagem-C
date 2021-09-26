@@ -10,14 +10,14 @@
 
 int main()
 {
-    float raio, area;
+    float raio_circulo, area_circulo;
 
-    printf("Informe o raio do circulo: "); scanf("%f", &raio);
+    printf("Informe o raio do circulo: "); scanf("%f", &raio_circulo);
 
-    area = PI * (raio * raio);
+    area_circulo = PI * (raio_circulo * raio_circulo);
 
-    printf("Raio do circulo: %.4f.\n", raio);
-    printf("Area do circulo: %.4f.\n", area);
+    printf("Raio do circulo: %.4f.\n", raio_circulo);
+    printf("Area do circulo: %.4f.\n", area_circulo);
     
     return EXIT_SUCCESS;
 }
