@@ -13,7 +13,9 @@ int main()
     float raio, area;
 
     printf("Informe o raio do circulo: "); scanf("%f", &raio);
+
     area = PI * (raio * raio);
+
     printf("Raio do circulo: %.4f.\n", raio);
     printf("Area do circulo: %.4f.\n", area);
     

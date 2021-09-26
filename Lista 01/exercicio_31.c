@@ -8,10 +8,16 @@
 
 int main()
 {
-    int numero;
+    int numero, antecessor, sucessor;
 
     printf("Entre com um numero inteiro: "); scanf("%d", &numero);
-    printf("Numero = %d.\nAntecessor = %d.\nSucessor = %d.\n", numero, numero - 1, numero + 1);
-    
+
+    antecessor = numero - 1;
+    sucessor   = numero + 1;
+
+    printf("Numero     = %d\n", numero);
+    printf("Antecessor = %d\n", antecessor);
+    printf("Sucessor   = %d\n", sucessor);
+
     return EXIT_SUCCESS;
 }

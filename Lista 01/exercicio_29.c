@@ -12,10 +12,13 @@ int main()
 
     printf("Informe um numero: "); scanf("%f", &numero);
     soma += numero;
+
     printf("Informe outro numero: "); scanf("%f", &numero);
     soma += numero;
+
     printf("Informe outro numero: "); scanf("%f", &numero);
     soma += numero;
+
     printf("Informe outro numero: "); scanf("%f", &numero);
     soma += numero;
 

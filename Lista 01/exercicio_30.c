@@ -13,7 +13,9 @@ int main()
     float reais, dolares;
     
     printf("Entre com o valor em reais(R$): "); scanf("%f", &reais);
+
     dolares = reais / PRECO_DOLAR;
+   
     printf("R$ %.2f = U$D %.2f.\n", reais, dolares);
 
     return EXIT_SUCCESS;

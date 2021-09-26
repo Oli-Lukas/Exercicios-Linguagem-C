@@ -8,12 +8,14 @@
 
 int main()
 {
-    float lado, area;
+    float lado_quadrado, area_quadrado;
 
-    printf("Informe o lado de um quadrado: "); scanf("%f", &lado);
-    area = lado * lado;
-    printf("lado do quadrado = %.2f.\n", lado);
-    printf("area do quadrado = %.2f.\n", area);
-    
+    printf("Informe o lado de um quadrado: "); scanf("%f", &lado_quadrado);
+
+    area_quadrado = lado_quadrado * lado_quadrado;
+
+    printf("lado do quadrado = %.2f.\n", lado_quadrado);
+    printf("area do quadrado = %.2f.\n", area_quadrado);
+
     return EXIT_SUCCESS;
 }
