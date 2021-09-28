@@ -23,3 +23,5 @@ int main()
 
     return EXIT_SUCCESS;
 }
+
+#undef PI

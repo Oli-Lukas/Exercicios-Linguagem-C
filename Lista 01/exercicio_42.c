@@ -7,17 +7,19 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define TAXA_DE_GRATIFICACAO 0.05
+#define TAXA_GRATIFICACAO 0.05
 
 int main()
 {
     float salario_base, salario_final;
 
     printf("Digite o salario-base do funcionario: "); scanf("%f", &salario_base);
-    salario_final = salario_base * (1 + TAXA_DE_GRATIFICACAO);
+    salario_final = salario_base * (1 + TAXA_GRATIFICACAO);
     
     printf("Salario-base = R$ %.2f.\n", salario_base);
     printf("Salario com gratificacao = R$ %.2f.\n", salario_final);
     
     return EXIT_SUCCESS;
 }
+
+#undef TAXA_GRATIFICACAO

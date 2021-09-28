@@ -8,7 +8,7 @@
 #include <stdlib.h>
 
 #define DIARIA 30.0
-#define TAXA_DO_IMPOSTO_DE_RENDA 0.08
+#define TAXA_IMPOSTO_RENDA 0.08
 
 int main()
 {
@@ -19,7 +19,7 @@ int main()
     printf("\n");
 
     valor_bruto   = numero_dias * DIARIA;
-    imposto_renda = valor_bruto * TAXA_DO_IMPOSTO_DE_RENDA;
+    imposto_renda = valor_bruto * TAXA_IMPOSTO_RENDA;
     valor_liquido = valor_bruto - imposto_renda;
 
     printf("Valor Bruto      = R$ %.2f.\n", valor_bruto);
@@ -28,3 +28,6 @@ int main()
 
     return EXIT_SUCCESS;
 }
+
+#undef DIARIA
+#undef TAXA_IMPOSTO_RENDA
