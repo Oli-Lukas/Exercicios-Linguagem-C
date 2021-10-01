@@ -8,24 +8,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
-
-#define VALOR_MINIMO_SEGUNDO 0
-#define VALOR_MAXIMO_SEGUNDO 59
-
-#define VALOR_MINIMO_MINUTO 0
-#define VALOR_MAXIMO_MINUTO 59
-
-#define VALOR_MINIMO_HORA 0
-#define VALOR_MAXIMO_HORA 23
-
-struct Horario
-{
-    int hora;
-    int minuto;
-    int segundo;
-};
-
-typedef struct Horario Horario;
+#include "horario.h"
 
 int  lerHora();
 bool validaHora(int hora);
@@ -42,9 +25,6 @@ void mensagemSegundoInvalido();
 int  lerDuracaoSegundos();
 bool validaDuracao(int duracao);
 void mensagemDuracaoInvalida();
-
-Horario calculaNovoHorario(Horario horario_base, int duracao_segundos);
-void    exibeHorario(Horario horario, const char *rotulo_horario);
 
 int main()
 {
@@ -185,47 +165,3 @@ void mensagemDuracaoInvalida()
     printf("A duracao fornecida eh invalida.\n");
     printf("Por favor! Digite um valor maior do que 0.\n\n");
 }
-
-Horario calculaNovoHorario(Horario horario_base, int duracao_segundos)
-{
-    Horario novo_horario = horario_base;
-
-    while (duracao_segundos-- > 0)
-    {
-        novo_horario.segundo++;
-
-        if (novo_horario.segundo > VALOR_MAXIMO_SEGUNDO)
-        {
-            novo_horario.minuto++;
-            novo_horario.segundo = 0;
-        }
-
-        if (novo_horario.minuto > VALOR_MAXIMO_MINUTO)
-        {
-            novo_horario.hora++;
-            novo_horario.minuto = 0;
-        }
-
-        if (novo_horario.hora > VALOR_MAXIMO_HORA) novo_horario.hora = 0;
-    }
-
-    return novo_horario;
-}
-
-void exibeHorario(Horario horario, const char *rotulo_horario)
-{
-    printf("\t%s\n", rotulo_horario);
-    printf("Hora   : %02d\n", horario.hora);
-    printf("Minuto : %02d\n", horario.minuto);
-    printf("Segundo: %02d\n", horario.segundo);
-    printf("\n");
-}
-
-#undef VALOR_MINIMO_SEGUNDO
-#undef VALOR_MAXIMO_SEGUNDO
-
-#undef VALOR_MINIMO_MINUTO
-#undef VALOR_MAXIMO_MINUTO
-
-#undef VALOR_MINIMO_HORA
-#undef VALOR_MAXIMO_HORA
