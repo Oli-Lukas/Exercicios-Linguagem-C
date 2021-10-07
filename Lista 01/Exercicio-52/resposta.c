@@ -9,6 +9,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+float calculaParte(float premio, float taxa);
+
 int main()
 {
     float valor_investido_a, valor_investido_b, valor_investido_c, premio, total;
@@ -28,14 +30,14 @@ int main()
     printf("Taxa 1 = %.2f%%.\n", taxa_a * 100);
     printf("Taxa 2 = %.2f%%.\n", taxa_b * 100);
     printf("Taxa 3 = %.2f%%.\n", taxa_c * 100);
-
-    parte_a = premio * taxa_a;
-    parte_b = premio * taxa_b;
-    parte_c = premio * taxa_c;
-
-    printf("Parte do ganhador A = R$ %.2f.\n", parte_a);
-    printf("Parte do ganhador A = R$ %.2f.\n", parte_b);
-    printf("Parte do ganhador A = R$ %.2f.\n", parte_c);
+    printf("Parte do ganhador A = R$ %.2f.\n", calculaParte(premio, taxa_a));
+    printf("Parte do ganhador A = R$ %.2f.\n", calculaParte(premio, taxa_b));
+    printf("Parte do ganhador A = R$ %.2f.\n", calculaParte(premio, taxa_c));
     
     return EXIT_SUCCESS;
+}
+
+float calculaParte(float premio, float taxa)
+{
+    return (premio * taxa);
 }
