@@ -13,10 +13,8 @@ int main()
 
     printf("Digite um numero: "); scanf("%f", &numero);
 
-    if (numero > 0)
-        printf("A raiz quadrada de %f eh +-%f.\n", numero, sqrt(numero));
-    else
-        printf("Numero digitado invalido.");
+    if (numero > 0) printf("A raiz quadrada de %f eh +-%f.\n", numero, sqrt(numero));
+    else            printf("Numero digitado invalido.");
     
     return EXIT_SUCCESS;
 }

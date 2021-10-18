@@ -26,8 +26,6 @@ bool ePar(int numero)
 
 void exibeParidade(int numero)
 {
-	if (ePar(numero))
-		printf("O numero %d eh par.\n", numero);
-	else
-		printf("O numero %d eh impar.\n", numero);	
+	if (ePar(numero)) printf("O numero %d eh par.\n", numero);
+	else              printf("O numero %d eh impar.\n", numero);	
 }
