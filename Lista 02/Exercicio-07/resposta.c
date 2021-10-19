@@ -19,8 +19,7 @@ int main()
 	numero1 = lerNumero("primeiro");
 	numero2 = lerNumero("segundo");
 
-	if (!eIgual(numero1, numero2))
-		maior = retornaMaiorNumero(numero1, numero2);
+	if (!eIgual(numero1, numero2)) maior = retornaMaiorNumero(numero1, numero2);
 
 	exibeResultado(eIgual(numero1, numero2), maior);
 
@@ -48,8 +47,6 @@ float retornaMaiorNumero(float num1, float num2)
 
 void exibeResultado(bool numerosIguais, float maior)
 {
-	if (!numerosIguais)
-		printf("O maior numero digitado foi %f.\n", maior);
-	else
-		printf("Numeros iguais.\n");
+	if (!numerosIguais) printf("O maior numero digitado foi %f.\n", maior);
+	else                printf("Numeros iguais.\n");
 }

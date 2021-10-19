@@ -12,23 +12,23 @@ void imprimeStatusDoEmprestimo(bool status);
 
 int main()
 {
-	float salario, prestacaoDoEmprestimo;
+	float salario, prestacao_emprestimo;
 	
 	printf("Digite o salario do trabalhador: R$ "); scanf("%f", &salario);
-	printf("Digite o valor da prestacao do emprestimo: R$ "); scanf("%f", &prestacaoDoEmprestimo);
+	printf("Digite o valor da prestacao do emprestimo: R$ "); scanf("%f", &prestacao_emprestimo);
 
-	imprimeStatusDoEmprestimo(validaEmprestimo(prestacaoDoEmprestimo, salario));
+	imprimeStatusDoEmprestimo(validaEmprestimo(prestacao_emprestimo, salario));
 	
 	return EXIT_SUCCESS;
 }
 
 bool validaEmprestimo(float prestacao, float salario)
 {
-	float vintePorCentoDoSalario;
+	float vinte_por_cento_salario;
 
-	vintePorCentoDoSalario = salario * 0.20;
+	vinte_por_cento_salario = salario * 0.20;
 
-	return (prestacao <= vintePorCentoDoSalario);
+	return (prestacao <= vinte_por_cento_salario);
 }
 
 void imprimeStatusDoEmprestimo(bool status)

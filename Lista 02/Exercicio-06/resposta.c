@@ -23,10 +23,11 @@ int main()
 
 	if (!eIgual(numero1, numero2))
 	{
-		maior = retornaMaiorNumero(numero1, numero2);
+		maior     = retornaMaiorNumero(numero1, numero2);
 		diferenca = retornaDiferenca(numero1, numero2);
 
-		printf("O maior numero digitado foi %d.\n", maior);		
+		printf("O maior numero digitado foi %d.\n", maior);
+		printf("A diferenca entre os numero eh: %d.\n", diferenca);		
 	}
 	else
 		printf("Voce digitou o mesmo numero duas vezes.\n");

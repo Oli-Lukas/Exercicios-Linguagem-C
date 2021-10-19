@@ -12,17 +12,18 @@
 int main()
 {
 	char sexo;
-	float altura, pesoIdeal;
+	float altura, peso_ideal;
+
+	altura     = 0.0;
+	peso_ideal = 0.0;
 
 	printf("Entre com a altura da pessoa: "); scanf("%f", &altura); fflush(stdin);
 	printf("Informe o sexo da pessoa (M - masculino, F - feminino): "); scanf("%c", &sexo);
 	
-	if (isalpha(sexo) && toupper(sexo) == 'M')
-		pesoIdeal = (72.7 * altura) - 58;
-	else if (isalpha(sexo) && toupper(sexo) == 'F')
-		pesoIdeal = (62.1 * altura) - 44.7;
+	if (isalpha(sexo) && toupper(sexo) == 'M')      peso_ideal = (72.7 * altura) - 58;
+	else if (isalpha(sexo) && toupper(sexo) == 'F') peso_ideal = (62.1 * altura) - 44.7;
 	
-	printf("O peso ideal para voce e %.2f.\n", pesoIdeal);
+	printf("O peso ideal para voce e %.2f.\n", peso_ideal);
 
 	return EXIT_SUCCESS;
 }
